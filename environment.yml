@@ -1,0 +1,14 @@
+name: gravtools-env
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - astropy
+  - codecov
+  - python=3.7
+  - pytest
+  - pycbc
+  - jupyter
+  - jupyter_contrib_nbextensions

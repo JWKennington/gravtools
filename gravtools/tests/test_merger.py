@@ -3,7 +3,7 @@
 import pytest
 from pycbc import catalog
 
-from gravtools import merger
+from gravtools import merger, MergerParameters
 
 
 class TestMerger:
@@ -16,3 +16,4 @@ class TestMerger:
 
     def test_summary(self, m):
         assert merger.summary(m) == 'Merger[GW150914](Mass1=35.6, Mass2=30.6, FinalSpin=0.69)'
+        assert merger.summary(m, parameters=[MergerParameters.Redshift]) == 'Merger[GW150914](Redshift=0.09)'

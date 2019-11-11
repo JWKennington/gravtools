@@ -41,7 +41,8 @@ def summary(m: Merger, parameters: typing.List[MergerParameters] = DEFAULT_SUMMA
 
     Returns:
         str, the summary string of the merger
+        Sample: Merger[GW150914](Mass1=35.6, Mass2=30.6, FinalSpin=0.69)
     """
-    return 'Merger {name}:\n{parameters}'.format(name=name(m),
-                                                 parameters='\n'.join(
-                                                     '    {}={}'.format(p.name, m.median1d(p)) for p in parameters))
+    return 'Merger[{name}]({parameters})'.format(name=name(m),
+                                                 parameters=', '.join(
+                                                     '{}={}'.format(p.name, m.median1d(p)) for p in parameters))

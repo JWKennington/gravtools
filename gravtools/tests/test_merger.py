@@ -5,13 +5,6 @@ from pycbc import catalog
 
 from gravtools import merger
 
-SAMPLE_MERGER_SUMMARY = """
-Merger GW150914:
-    Mass1=35.6
-    Mass2=30.6
-    FinalSpin=0.69
-""".strip()
-
 
 class TestMerger:
     @pytest.fixture(scope='class', autouse=True)
@@ -22,4 +15,4 @@ class TestMerger:
         assert merger.name(m) == 'GW150914'
 
     def test_summary(self, m):
-        assert merger.summary(m) == SAMPLE_MERGER_SUMMARY
+        assert merger.summary(m) == 'Merger[GW150914](Mass1=35.6, Mass2=30.6, FinalSpin=0.69)'
